@@ -19,7 +19,7 @@ logger = logging.getLogger("TG-Client")
 
 
 class TGClient:
-    def __init__(self, dev: bool):
+    def __init__(self, dev: bool, session_path: str):
         self._MAX_MESSAGES = 29
         if dev:
             api_id = os.getenv("dev-app-id")
@@ -30,7 +30,7 @@ class TGClient:
         self._ME = None
         api_id = int(api_id)
 
-        _app = TelegramClient("Senahiya", api_id, api_hash)
+        _app = TelegramClient(session_path, api_id, api_hash)
         self._app = _app
         self._message_queue = []
         self._my_messages = OrderedDict()

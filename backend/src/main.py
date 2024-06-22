@@ -48,11 +48,11 @@ async def send_message_contact(
 async def get_chats(request: Request) -> JSONResponse:
     _client = request.client.host
 
-    if not validate_client(_client):
-        raise HTTPException(
-            status_code=403,
-            detail="Forbidden to users"
-        )
+    # if not validate_client(_client):
+    #     raise HTTPException(
+    #         status_code=403,
+    #         detail="Forbidden to users"
+    #     )
 
     chats = await client.get_chats()
 
@@ -67,11 +67,11 @@ async def download_channel_medias(
 ) -> JSONResponse:
     _client = request.client.host
 
-    if not validate_client(_client):
-        raise HTTPException(
-            status_code=403,
-            detail="Forbidden to users"
-        )
+    # if not validate_client(_client):
+    #     raise HTTPException(
+    #         status_code=403,
+    #         detail="Forbidden to users"
+    #     )
 
     await client.download(channel, limit=limit)
     return JSONResponse(content={"details": "ok"})
