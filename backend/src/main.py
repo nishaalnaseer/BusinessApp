@@ -7,7 +7,11 @@ from starlette.responses import JSONResponse
 from src.crud.utils import select_chat_messages
 from src.utils import lifespan, client
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    lifespan=lifespan,
+    title="Business App",
+    description="Telegram client wrapper"
+)
 accepted_ips = set(os.getenv('IPS').split(','))
 # TODO implement web sockets
 

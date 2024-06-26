@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-db = getenv("database")
-host = getenv("database-host")
-port = int(getenv("database-port"))
-user = getenv("database-username")
-password = getenv("database-password")
+db = getenv("DATABASE")
+host = getenv("DATABASE_HOST")
+port = int(getenv("DATABASE_PORT"))
+user = getenv("DATABASE_USERNAME")
+password = getenv("DATABASE_PASSWORD")
 
 url = f"mysql+aiomysql://{user}:{password}@{host}:{port}/{db}"
 engine = create_async_engine(url,)

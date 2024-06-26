@@ -22,11 +22,11 @@ class TGClient:
     def __init__(self, dev: bool, session_path: str):
         self._MAX_MESSAGES = 29
         if dev:
-            api_id = os.getenv("dev-app-id")
-            api_hash = os.getenv("dev-app-hash")
+            api_id = os.getenv("DEV_APP_ID")
+            api_hash = os.getenv("DEV_APP_HASH")
         else:
-            api_id = os.getenv("prod-app-id")
-            api_hash = os.getenv("prod-app-hash")
+            api_id = os.getenv("PROD_APP_ID")
+            api_hash = os.getenv("PROD_APP_HASH")
         self._ME = None
         api_id = int(api_id)
 
