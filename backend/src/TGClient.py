@@ -19,7 +19,7 @@ logger = logging.getLogger("TG-Client")
 
 
 class TGClient:
-    def __init__(self, dev: bool, session_path: str):
+    def __init__(self, dev: int, session_path: str):
         self._MAX_MESSAGES = 29
         if dev:
             api_id = os.getenv("DEV_APP_ID")

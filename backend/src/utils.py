@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 from src.crud.utils import initialise_db
 
 load_dotenv()
-dev = os.getenv("DEV")
+dev = int(os.getenv("DEV"))
 session_path = os.getenv("SESSION_PATH")
-client = TGClient(eval(dev), session_path)
+client = TGClient(dev, session_path)
 
 
 @asynccontextmanager
